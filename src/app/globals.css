@@ -3,25 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  @apply flex w-full h-full justify-center items-center pb-0;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #f2f2f2;
+}
+.body {
+  @apply flex w-[1440px] h-auto flex-col items-center shrink-0 bg-white rounded-2xl;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+pre:has(div.codeblock) {
+  padding: 0;
+}
+.headsection {
+  @apply flex w-[1280px] flex-col items-center gap-8 pt-12 pb-10 px-10;
+}
+.section {
+  @apply flex w-[1280px] items-start gap-4 px-10 py-4;
+}
+.chart {
+  @apply flex h-[23rem] flex-col items-start gap-4 flex-[1_0_0] border px-6 py-3 rounded-xl border-solid border-[#DDD];
+}
+#week {
+  @apply flex flex-col items-start gap-4 border px-6 py-3 rounded-xl border-solid border-[#DDD];
+}
+#relevant {
+  @apply flex flex-col items-start gap-[29px] flex-[1_0_0] self-stretch border px-6 py-3 rounded-xl border-solid border-[#DDD];
+}
+.title {
+  @apply text-[#333] text-xl not-italic font-semibold leading-[normal];
+  font-family: Pretendard Variable;
+}
+#relevant li::marker {
+  color: #d9d9d9;
+}
+.partition {
+  width: 1px;
+  background-color: #d9d9d9;
 }
