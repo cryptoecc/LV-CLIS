@@ -4,6 +4,7 @@ const RelevantNews = () => {
     <div id="relevant">
       <div className="title">관련 뉴스</div>
       <div className="relevantNews flex h-full pb-4 text-sm">
+        {/* */}
         <div className="news1 w-96">
           <div className="flex">
             <span>뉴시스</span>
@@ -14,6 +15,7 @@ const RelevantNews = () => {
             </ul>
           </div>
         </div>
+        {/* */}
         <span className="h-full partition ml-4 mr-4"></span>
         <div className="news2">
           <ul className="">

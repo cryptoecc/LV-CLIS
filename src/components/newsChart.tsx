@@ -7,18 +7,19 @@ const NewsChart = () => {
     const root = am5.Root.new("linechartdiv");
     let chart = root.container.children.push(
       am5xy.XYChart.new(root, {
-        focusable: true,
         panX: true,
         panY: true,
       })
     );
     let yAxis = chart.yAxes.push(
       am5xy.ValueAxis.new(root, {
+        logarithmic: true,
         renderer: am5xy.AxisRendererY.new(root, {
           minGridDistance: 25,
         }),
       })
     );
+
     let xAxis = chart.yAxes.push(
       am5xy.DateAxis.new(root, {
         maxDeviation: 0.1,
@@ -55,19 +56,27 @@ const NewsChart = () => {
         stroke: am5.color(0xf95256),
       })
     );
+    var date = new Date().toLocaleDateString();
+    var today = Date.parse(date);
+    var result: any[] = [];
+    result.push(date);
+    for (var i = 1; i < 5; i++) {
+      today -= 86400000;
+      result.push(new Date(today).getTime());
+    }
+
     series.data.setAll([
-      { date: new Date(2023, 0, 1).getTime(), value: 27 },
-      { date: new Date(2023, 0, 2).getTime(), value: 50 },
-      { date: new Date(2023, 0, 3).getTime(), value: 73 },
-      { date: new Date(2023, 0, 4).getTime(), value: 22 },
+      { date: result[4], value: 27 },
+      { date: result[3], value: 50 },
+      { date: result[2], value: 73 },
+      { date: result[1], value: 22 },
     ]);
     series2.data.setAll([
-      { date: new Date(2023, 0, 1).getTime(), value: 75 },
-      { date: new Date(2023, 0, 2).getTime(), value: 22 },
-      { date: new Date(2023, 0, 3).getTime(), value: 35 },
-      { date: new Date(2023, 0, 4).getTime(), value: 60 },
+      { date: result[4], value: 75 },
+      { date: result[3], value: 22 },
+      { date: result[2], value: 35 },
+      { date: result[1], value: 60 },
     ]);
-
     return () => {
       root.dispose();
     };
