@@ -2,8 +2,19 @@
 import React, { useEffect } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5hierarchy from "@amcharts/amcharts5/hierarchy";
+import * as Naver from "@/src/api/NaverAPI";
 const NetworkChart = () => {
+  // const fetchData = async () => {
+  //   try {
+  //     const data = await Naver.NewsList();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //     // Error handling logic here
+  //   }
+  // };
   useEffect(() => {
+    // fetchData();
     const root = am5.Root.new("networkchartdiv");
     let series = root.container.children.push(
       am5hierarchy.ForceDirected.new(root, {
