@@ -6,17 +6,6 @@ import * as Naver from "@/src/api/NaverAPI";
 
 const WordCloud = ({ searchTerm }) => {
   const [data2, setData2] = useState("");
-
-  // useEffect(() => {
-  //   Naver.newstitle().then((res: string) => {
-  //     let data = "";
-  //     for (var i = 0; i < res.length; i++) {
-  //       data += res[i];
-  //     }
-  //     setData2(data);
-  //     console.log(data);
-  //   });
-  // }, [searchTerm]);
   var defaultData = "오염수";
   useEffect(() => {
     if (searchTerm != "") {
