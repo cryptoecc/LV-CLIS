@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+// import { weeklyKeyword } from "@/src/api/NaverAPI";
 var date = new Date().toLocaleDateString();
 var today = Date.parse(date);
 var result: string[] = [];
@@ -20,6 +21,9 @@ function weeklyRank() {
   return rank;
 }
 const WeeklyKeyword = () => {
+  useEffect(() => {
+    // console.log(weeklyKeyword());
+  });
   return (
     <div id="week">
       <div className="keywordHead">

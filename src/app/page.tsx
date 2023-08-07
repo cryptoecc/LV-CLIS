@@ -23,9 +23,9 @@ export default function Home() {
         <NetworkChart />
         <NewsChart />
       </div>
-      <div className="section">
+      <div className="section max-h-96">
         <WeeklyKeyword />
-        <RelevantNews />
+        <RelevantNews searchTerm={searchTerm} />
       </div>
     </article>
   );
