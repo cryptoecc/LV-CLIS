@@ -20,11 +20,11 @@ export default function Home() {
       </div>
       <div className="section">
         <Wordcloud searchTerm={searchTerm} />
-        <NetworkChart />
-        <NewsChart />
+        <NetworkChart searchTerm={searchTerm} />
+        {/* <NewsChart /> */}
       </div>
-      <div className="section max-h-96">
-        <WeeklyKeyword />
+      <div className="section">
+        {/* <WeeklyKeyword searchTerm={searchTerm} /> */}
         <RelevantNews searchTerm={searchTerm} />
       </div>
     </article>

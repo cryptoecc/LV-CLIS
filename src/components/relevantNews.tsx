@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { newstitle, newsURL } from "@/src/api/NaverAPI";
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 const RelevantNews = ({ searchTerm }) => {
   const [data2, setData2] = useState([]);
   const [url, seturl] = useState([]);
@@ -54,13 +57,18 @@ const RelevantNews = ({ searchTerm }) => {
     }
     return rank;
   }
+  const min1 = rand(0, 40),
+    min2 = rand(50, 90),
+    max1 = min1 + 8,
+    max2 = min2 + 8;
+  console.log(min1, max1, min2, max2);
   return (
     <div id="relevant">
       <div className="title mt-2">관련 뉴스</div>
-      <div className="relevantNews flex h-full pb-2 text-sm">
-        <div className="news1 w-96">{Title(0, 6)}</div>
-        <span className="h-full partition ml-4 mr-4"></span>
-        <div className="news2">{Title(8, 15)}</div>
+      <div className="relevantNews w-full flex h-full pb-2 text-sm justify-around">
+        <div className="news1 w-1/2">{Title(min1, max1)}</div>
+        <span className="h-full partition ml-3 mr-3 "></span>
+        <div className="news2 w-1/2">{Title(min2, max2)}</div>
       </div>
     </div>
   );

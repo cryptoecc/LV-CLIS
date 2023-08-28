@@ -6,7 +6,7 @@
   @apply flex w-full h-full justify-center items-center pb-0;
 }
 body {
-  background-color: #f2f2f2;
+  background-color: #e2e2e2;
 }
 .body {
   @apply flex w-[1440px] h-auto flex-col items-center shrink-0 bg-white rounded-2xl;

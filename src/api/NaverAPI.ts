@@ -3,10 +3,11 @@ import axios from "axios";
 const CLINET_ID = process.env.NEXT_PUBLIC_API_KEY_NAVER_ID;
 const CLINET_PW = process.env.NEXT_PUBLIC_API_KEY_NAVER_PW;
 const BASE_PATH = "/api/v1/search/news.json?";
+const DATALAB_PATH = "/api/v1/datalab/search.json";
 const commonParams = {
   query: "오염수",
   sort: "sim",
-  display: 20,
+  display: 100,
 };
 const commonHeaders = {
   "X-Requested-With": "XMLHttpRequest",
@@ -27,6 +28,7 @@ async function fetchData(params: any, headers: any) {
       headers,
     });
     const data = response.data.items;
+    // console.log(formattingDate(today), formattingDate(Aweek));
     return data;
   } catch (error) {
     console.log("오류 발생", error.status);
